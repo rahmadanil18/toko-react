@@ -63,7 +63,7 @@
   --tblr-body-font-weight: 400;
   --tblr-body-line-height: 1.4285714;
   --tblr-body-color: #232e3c;
-  --tblr-body-bg: #f4f6fa;
+  --tblr-body-bg: #eaf1ff;
 }
 *,
 ::after,
@@ -9535,11 +9535,11 @@ body :hover::-webkit-scrollbar-thumb {
 }
 .navbar-light {
   box-shadow: inset 0 -1px 0 0 rgba(101, 109, 119, 0.16);
-  background-color: #fff;
+  background-color: #e0e2e4;
 }
 .navbar-dark {
   background: #232e3c;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(63, 177, 69, 0.7);
 }
 .navbar-dark::-webkit-scrollbar {
   width: 6px;

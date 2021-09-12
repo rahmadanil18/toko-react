@@ -21,9 +21,9 @@ export default function NotificationContextProvider({ children }) {
     getData()
   }, [])
 
-  const setRead = async (message) => {
+  const setAsRead = async (message) => {
     try {
-      await notificationService.setRead(
+      await notificationService.setAsRead(
         {
           status: true,
         },
@@ -43,13 +43,13 @@ export default function NotificationContextProvider({ children }) {
     }
   }
 
-  const getNewMessage = () => {
-    let newMessage = notifications.filter((x) => x.status == false)
-    return newMessage.length
+  const getTotalMessage = () => {
+    let belumDibaca = notifications.filter((x) => x.status == false)
+    return belumDibaca.length
   }
 
   const handleReadMessage = (id) => {
-    setRead(id)
+    setAsRead(id)
   }
 
   return (
@@ -58,8 +58,8 @@ export default function NotificationContextProvider({ children }) {
         notifications,
         isLoading,
         getNotification: getData,
-        setRead,
-        getNewMessage,
+        getTotalMessage,
+        setAsRead,
         handleReadMessage,
       }}
     >

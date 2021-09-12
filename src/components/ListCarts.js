@@ -1,6 +1,7 @@
 import useCheckout from 'hooks/useCheckout'
 import { useContext } from 'react'
 import { CartContext } from '../contexts/CartContext'
+import { NotificationContext } from '../contexts/NotificationContext'
 import { AuthContext } from 'contexts/AuthContext'
 import { formatNumber } from 'utils/number'
 import { confirmAlert } from 'react-confirm-alert'
@@ -14,6 +15,8 @@ export default function ListCarts() {
     getTotalQuantity,
     handleEditQuantity,
   } = useContext(CartContext)
+
+  const { getNotification } = useContext(NotificationContext)
 
   const [handleCheckout, isLoading] = useCheckout()
   const { me } = useContext(AuthContext)
@@ -36,6 +39,7 @@ export default function ListCarts() {
           onClick: async () => {
             await handleCheckout()
             getCart()
+            getNotification()
           },
         },
       ],

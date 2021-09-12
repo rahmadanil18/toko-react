@@ -7,13 +7,13 @@ const getAll = async () => {
   return response ? response.data.data : []
 }
 
-const setRead = async (body, id) => {
+const setAsRead = async (body, id) => {
   await api.put(`notifications/${id}`, body).catch((err) => console.log(err))
 }
 
 const notificationService = {
   getAll,
-  setRead,
+  setAsRead,
 }
 
 export default notificationService
